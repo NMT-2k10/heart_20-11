@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>Ngày Nhà Giáo Việt Nam</title>
+    <meta name="description" content="Ngày nhà giáo Việt Nam">
+    <meta name="csrf-token" content="SA34DtRc8t0ly8Bchgtj2RpBzsqBhZN3ftzkNoHP">
+    <meta name="keywords" content="Chúc mừng ngày nhà giáo Việt Nam">
+    <link rel="canonical" href="https://love.tsonit.com/cosmic-heart-theme">
+    <meta property="og:title" content="Chúc mừng ngày nhà giáo Việt Nam">
+    <meta property="og:description" content="Ngày nhà giáo Việt Nam">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://love.tsonit.com/cosmic-heart-theme">
+    <meta property="og:image" content="https://i.imgur.com/hoYi8S2.png">
+    <meta property="og:image:height" content="575">
+    <meta property="og:image:width" content="288">
+    <meta name="twitter:title" content="Chúc mừng ngày nhà giáo Việt Nam">
+    <meta name="twitter:description" content="Ngày nhà giáo Việt Nam">
+    <meta name="twitter:image" content="https://i.imgur.com/hoYi8S2.png">
+    <meta name="twitter:site" content="@NMT">
+    <meta property="og:url" content="https://love.tsonit.com/cosmic-heart-theme">
+    <link rel="canonical" href="https://love.tsonit.com/cosmic-heart-theme">
+    <meta property="og:image:alt" content="Trang bìa của NMT" />
+    <meta name="twitter:image:alt" content="Trang bìa của NMT" />
+    <meta property="og:site_name" content="NMT" />
+    <meta name="twitter:creator" content="@nmt_2k10" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="author" content="Mạnh Tuấn">
+    <meta name="copyright" content="© 2025 NMT">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="icon" type="image/png" href="https://love.tsonit.com/ico_logo.png" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?
+  family=Noto+Sans:wght@300;400;500;700&
+  family=Noto+Sans+JP:wght@300;400;500;700&
+  family=Noto+Sans+KR:wght@300;400;500;700&
+  family=Noto+Sans+SC:wght@300;400;500;700&
+  family=Noto+Sans+TC:wght@300;400;500;700&
+  family=Noto+Sans+Arabic:wght@300;400;500;700&
+  family=Noto+Sans+Devanagari:wght@300;400;500;700&
+  family=Noto+Sans+Hebrew:wght@300;400;500;700&
+  family=Noto+Sans+Thai:wght@300;400;500;700&
+  display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            color: white;
+            font-family: "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Thai", sans-serif;
+            cursor: grab;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100vh;
+            display: block;
+        }
+
+        #love-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            perspective: 800px;
+            -webkit-perspective: 800px;
+            pointer-events: none;
+            touch-action: none;
+            contain: strict;
+        }
+
+        .orbiting-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            will-change: transform, opacity;
+            pointer-events: auto;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .orbiting-item.focused {
+            z-index: 9999 !important;
+        }
+
+        .orbiting-item.focused img {
+            width: 220px;
+            height: 220px;
+            border-radius: 24px;
+            transition: width 0.4s ease, height 0.4s ease, border-radius 0.4s ease;
+        }
+
+
+        .orbiting-item img,
+        .orbiting-item p {
+            will-change: transform;
+            filter: drop-shadow(0 0 10px var(--item-shadow-color, rgba(255, 105, 180, 0.7)));
+            -webkit-filter: drop-shadow(0 0 10px var(--item-shadow-color, rgba(255, 105, 180, 0.7)));
+            transition: filter 0.3s ease-out;
+            transform-origin: center center;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .orbiting-item:hover img,
+        .orbiting-item:hover p {
+            filter: drop-shadow(0 0 18px var(--item-highlight-color, rgba(255, 182, 193, 1)));
+            -webkit-filter: drop-shadow(0 0 18px var(--item-highlight-color, rgba(255, 182, 193, 1)));
+            transform: scale(1.1);
+        }
+
+         .orbiting-item img {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            object-fit: cover;
+        }
+
+        .orbiting-item p {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 4px #fff, 0 0 8px rgba(255, 105, 180, 0.8), 0 0 5px rgba(255, 21, 147, 0.6);
+            padding: 2px 4px;
+            white-space: nowrap;
+            border-radius: 4px;
+            font-family: "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Thai", sans-serif;
+        }
+
+        .orbiting-item.intro-phase img,
+        .orbiting-item.intro-phase p {
+            animation: introGlowPulse 1.4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.85));
+            -webkit-filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.85));
+        }
+
+        @keyframes pulse-item {
+            50% {
+                transform: scale(1.06);
+            }
+        }
+
+        @keyframes introGlowPulse {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.95);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(0.95);
+            }
+        }
+
+        #theme-selector {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            transform: translateX(0);
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .theme-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .theme-swatch:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .theme-swatch.active {
+            border-color: #ffffff;
+            box-shadow: 0 0 20px #ffffff;
+            transform: scale(1.15);
+        }
+
+        .control-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+        }
+
+        .control-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        #fullscreen-btn {
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            font-family: "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Thai", sans-serif;
+        }
+
+        #explode-btn {
+            background: linear-gradient(45deg, #ff8c00, #ff0080);
+        }
+
+        #explode-btn.active {
+            box-shadow: 0 0 20px #ff6347;
+            transform: scale(1.15);
+            pointer-events: none;
+            background: linear-gradient(45deg, #ff4500, #d30061);
+        }
+
+        #theme-selector::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: -1;
+            background: linear-gradient(45deg, #ff1493, #ff69b4, #ff8c00, #ff1493, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradientBorder 15s ease infinite;
+            border-radius: 25px;
+            filter: blur(8px);
+            opacity: 0.7;
+        }
+
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #orientation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            font-family: "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Thai", sans-serif;
+        }
+
+        #orientation-overlay svg {
+            animation: rotate-icon 2s linear infinite;
+        }
+
+        #orientation-overlay p {
+            margin-top: 20px;
+            font-size: 16px;
+            max-width: 250px;
+            font-family: "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Hebrew", "Noto Sans Thai", sans-serif;
+        }
+
+        @keyframes rotate-icon {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            #orientation-overlay {
+                display: flex;
+            }
+
+            body>canvas,
+            #love-container,
+            #theme-selector {
+                display: none !important;
+            }
+        }
+
+        .orbiting-item.unfocused {
+            opacity: 0.1 !important;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C01QH0Y269');
+    </script>
+    <style>
+        .text-white {
+            color: white !important;
+        }
+
+        .btn-audio-toggle,
+        .btn-fullscreen-toggle {
+            background-color: rgba(0, 0, 0, 0.356);
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        .music-status {
+            display: flex;
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            z-index: 9999;
+            align-items: center;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .music-status .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #a259f7;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="orientation-overlay">
+        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M18.4439 19.1222L18.9742 19.6525V19.6525L18.4439 19.1222ZM10.3042 19.1222L10.8346 18.5919L10.3042 19.1222ZM19.1222 10.3042L18.5919 10.8346L19.1222 10.3042ZM19.1222 18.4439L18.5919 17.9136L19.1222 18.4439ZM22 14.3741H22.75H22ZM5.55611 4.8778L6.08644 5.40813L5.55611 4.8778ZM13.6958 4.8778L14.2261 4.34747V4.34747L13.6958 4.8778ZM9.62593 2V2.75V2ZM4.8778 5.55611L4.34747 5.02578H4.34747L4.8778 5.55611ZM4.8778 13.6958L4.34747 14.2261H4.34747L4.8778 13.6958ZM2 9.62593H1.25H2ZM9.47792 6.08651C9.77081 5.79362 9.77081 5.31874 9.47792 5.02585C9.18503 4.73296 8.71015 4.73296 8.41726 5.02585L9.47792 6.08651ZM5.02574 8.41737C4.73284 8.71027 4.73284 9.18514 5.02574 9.47803C5.31863 9.77093 5.7935 9.77093 6.0864 9.47803L5.02574 8.41737ZM18.2959 8.4173C18.003 8.12441 17.5282 8.12441 17.2353 8.4173C16.9424 8.71019 16.9424 9.18507 17.2353 9.47796L18.2959 8.4173ZM14.522 6.76474C14.8149 7.05763 15.2898 7.05763 15.5827 6.76474C15.8756 6.47185 15.8756 5.99697 15.5827 5.70408L14.522 6.76474ZM5.40813 6.08644L6.08644 5.40813L5.02578 4.34747L4.34747 5.02578L5.40813 6.08644ZM18.5919 17.9136L17.9136 18.5919L18.9742 19.6525L19.6525 18.9742L18.5919 17.9136ZM10.8346 18.5919L5.40813 13.1654L4.34747 14.2261L9.77391 19.6525L10.8346 18.5919ZM17.9136 18.5919C16.9393 19.5661 16.2608 20.2423 15.6816 20.6843C15.1197 21.113 14.7402 21.25 14.3741 21.25V22.75C15.2 22.75 15.8961 22.4074 16.5915 21.8768C17.2695 21.3595 18.0299 20.5968 18.9742 19.6525L17.9136 18.5919ZM9.77391 19.6525C10.7182 20.5968 11.4786 21.3595 12.1567 21.8768C12.852 22.4074 13.5481 22.75 14.3741 22.75V21.25C14.008 21.25 13.6285 21.113 13.0665 20.6843C12.4873 20.2423 11.8088 19.5661 10.8346 18.5919L9.77391 19.6525ZM18.5919 10.8346C19.5661 11.8088 20.2423 12.4873 20.6843 13.0665C21.113 13.6285 21.25 14.008 21.25 14.3741H22.75C22.75 13.5481 22.4074 12.852 21.8768 12.1567C21.3595 11.4786 20.5968 10.7182 19.6525 9.77391L18.5919 10.8346ZM19.6525 18.9742C20.5968 18.0299 21.3595 17.2695 21.8768 16.5915C22.4074 15.8961 22.75 15.2 22.75 14.3741H21.25C21.25 14.7402 21.113 15.1197 20.6843 15.6816C20.2423 16.2608 19.5661 16.9393 18.5919 17.9136L19.6525 18.9742ZM6.08644 5.40813C7.0607 4.43387 7.73917 3.75765 8.3184 3.31572C8.88032 2.88698 9.25984 2.75 9.62593 2.75V1.25C8.8 1.25 8.10388 1.59265 7.40853 2.12318C6.73048 2.64051 5.97005 3.4032 5.02578 4.34747L6.08644 5.40813ZM14.2261 4.34747C13.2818 3.4032 12.5214 2.64051 11.8433 2.12318C11.148 1.59265 10.4519 1.25 9.62593 1.25V2.75C9.99203 2.75 10.3715 2.88698 10.9335 3.31572C11.5127 3.75765 12.1912 4.43387 13.1654 5.40813L14.2261 4.34747ZM4.34747 5.02578C3.4032 5.97005 2.64051 6.73048 2.12318 7.40853C1.59265 8.10388 1.25 8.8 1.25 9.62593H2.75C2.75 9.25984 2.88698 8.88032 3.31572 8.3184C3.75765 7.73917 4.43387 7.0607 5.40813 6.08644L4.34747 5.02578ZM5.40813 13.1654C4.43387 12.1912 3.75765 11.5127 3.31572 10.9335C2.88698 10.3715 2.75 9.99203 2.75 9.62593H1.25C1.25 10.4519 1.59265 11.148 2.12318 11.8433C2.64051 12.5214 3.4032 13.2818 4.34747 14.2261L5.40813 13.1654ZM8.41726 5.02585L5.02574 8.41737L6.0864 9.47803L9.47792 6.08651L8.41726 5.02585ZM16.2178 15.2438C16.4869 15.5129 16.4869 15.9491 16.2178 16.2181L17.2785 17.2787C18.1333 16.4239 18.1333 15.038 17.2785 14.1832L16.2178 15.2438ZM16.2178 16.2181C15.9488 16.4871 15.5126 16.4871 15.2436 16.2181L14.1829 17.2787C15.0377 18.1336 16.4237 18.1336 17.2785 17.2787L16.2178 16.2181ZM15.2436 16.2181C14.9745 15.9491 14.9745 15.5129 15.2436 15.2438L14.1829 14.1832C13.3281 15.038 13.3281 16.4239 14.1829 17.2787L15.2436 16.2181ZM15.2436 15.2438C15.5126 14.9748 15.9488 14.9748 16.2178 15.2438L17.2785 14.1832C16.4237 13.3284 15.0377 13.3284 14.1829 14.1832L15.2436 15.2438ZM17.2353 9.47796L18.5919 10.8346L19.6525 9.77391L18.2959 8.4173L17.2353 9.47796ZM13.1654 5.40813L14.522 6.76474L15.5827 5.70408L14.2261 4.34747L13.1654 5.40813Z"
+                fill="#ffffff"></path>
+            <path d="M20.5 6.98598L22 8C22 4.98532 19.8377 2.48275 17 2" stroke="#ffffff" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M3.5 17.014L2 16C2 19.0147 4.16229 21.5172 7 22" stroke="#ffffff" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <p> <p>Vui lòng xoay ngang màn hình để có trải nghiệm tốt nhất.</p></p>
+    </div>
+
+    <div id="love-container"></div>
+
+    <div id="theme-selector" style="display:none">
+        <div class="theme-swatch" data-theme="love" style="background: linear-gradient(45deg, #ff69b4, #ff1493);"></div>
+        <div class="theme-swatch" data-theme="nebula" style="background: linear-gradient(45deg, #00ffff, #ff1493);">
+        </div>
+        <div class="theme-swatch" data-theme="forest" style="background: linear-gradient(45deg, #00ff7f, #1e90ff);">
+        </div>
+        <div class="theme-swatch" data-theme="aurora" style="background: linear-gradient(45deg, #00ff7f, #9932cc);">
+        </div>
+        <div id="explode-btn" class="control-btn" title="Lan Tỏa Tình Yêu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18px" height="18px">
+                <path
+                    d="M12 1.5a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-3 0v-3a1.5 1.5 0 0 1 1.5-1.5zM12 18a1.5 1.5 0 0 0-1.5 1.5v3a1.5 1.5 0 0 0 3 0v-3a1.5 1.5 0 0 0-1.5-1.5zM5.25 9.75a1.5 1.5 0 0 0-1.5-1.5h-3a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 0 1.5-1.5zM22.5 9.75a1.5 1.5 0 0 0-1.5-1.5h-3a1.5 1.5 0 0 0 0 3h3a1.5 1.5 0 0 0 1.5-1.5zM7.404 7.404a1.5 1.5 0 0 1 2.122-2.122l2.121 2.122a1.5 1.5 0 0 1-2.122 2.122L7.404 7.404zm9.192 9.192a1.5 1.5 0 0 1 2.122-2.122l2.121 2.122a1.5 1.5 0 0 1-2.122 2.122l-2.121-2.122zM7.404 16.596a1.5 1.5 0 0 1-2.122 2.122L3.161 16.596a1.5 1.5 0 1 1 2.122-2.122l2.121 2.122zm9.192-9.192a1.5 1.5 0 0 1-2.122 2.122l-2.121-2.122a1.5 1.5 0 0 1 2.122-2.122l2.121 2.122z" />
+            </svg>
+        </div>
+        <div id="fullscreen-btn" class="control-btn">FS</div>
+    </div>
+      <button id="toggle-audio" class="text-white btn-audio-toggle"
+        style="position: absolute; top: 15px; right: 15px; z-index: 999;">
+        <i id="audio-icon" class="text-white  fa-solid fa-volume-high"></i>
+    </button>
+    <button id="toggle-fullscreen" class="text-white btn-fullscreen-toggle"
+        style="position: absolute; top: 15px; left: 15px; z-index: 999;">
+        <i id="fullscreen-icon" class="text-white fa-solid fa-expand"></i>
+    </button>
+    <audio id="bg-music" src="./audio/music.mp3" loop preload="auto" playsinline style="display: none;"></audio>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+        import { Lensflare, LensflareElement } from 'three/addons/objects/Lensflare.js';
+
+        let scene, camera, renderer, composer, controls, mainGroup, clock;
+        let coreHeart, orbitRings, starfield, centralLight, lensflare, meteorShower;
+        let distantStars, nearerStars, spaceDust, pinkNebulae, blueNebulae;
+        let backgroundNebula1, backgroundNebula2;
+        let mouse = new THREE.Vector2(-10, -10);
+        let currentHdrTexture = null;
+        let orbitingItemsData = [];
+        let raycaster = new THREE.Raycaster();
+        let resizeDebounceTimeout;
+        const isMobile = window.innerWidth <= 768;
+
+        let isExplosionActive = false;
+        let explosionStartTime = 0;
+        const explosionDuration = 2000;
+
+        let isFocused = false;
+        let focusedItem = null;
+        let returnTimeout = null;
+        let isTransitioning = false;
+        const originalCameraPos = new THREE.Vector3();
+        const originalControlsTarget = new THREE.Vector3();
+
+        let waveTimeStart = -10.0;
+        const WAVE_INTERVAL = 12.0;
+        const WAVE_SPEED = 20.0;
+        const WAVE_WIDTH = 28.0;
+
+        const FOCUS_DISTANCE = 30;
+        const RETURN_TARGET = new THREE.Vector3(0, 5, 0);
+
+        const INTRO_TOTAL_DURATION = 9.0;
+        const INTRO_STAR_PHASE = 3.5;
+        const INTRO_HEART_REVEAL_START = 2.4;
+        const INTRO_HEART_REVEAL_DURATION = 4.2;
+        const INTRO_PHOTO_DELAY_BASE = 1.5;
+        const INTRO_PHOTO_STAGGER = 0.25;
+        const INTRO_PHOTO_DURATION = 1.0;
+        let introStartTime = 0;
+        let introCompleted = false;
+        let introStreaks = null;
+        const cameraFinalPosition = new THREE.Vector3();
+        const introCameraStart = new THREE.Vector3();
+        const introTarget = new THREE.Vector3(0, 5, 0);
+        const idleDriftVector = new THREE.Vector3();
+        const cameraOffset = new THREE.Vector3();
+        const tempCameraLerp = new THREE.Vector3();
+        const tempPhotoLerp = new THREE.Vector3();
+        const tempTargetVector = new THREE.Vector3();
+
+        const themes = {
+            love: {
+                sphere: [new THREE.Color(0xff69b4), new THREE.Color(0xff1493), new THREE.Color(0xff8c00), new THREE.Color(0xffd700), new THREE.Color(0xff4500)],
+                rings: (i, count, j, pCount) => new THREE.Color().setHSL((i / count) * 0.1 + (j / pCount) * 0.1 + 0.95, 0.9, 0.7),
+                hdr: '',
+                shadowColor: 'rgba(255, 105, 180, 0.7)',
+                highlightColor: 'rgba(255, 182, 193, 1)'
+            },
+            nebula: {
+                sphere: [new THREE.Color(0x00ffff), new THREE.Color(0xff1493), new THREE.Color(0x4169e1), new THREE.Color(0xff69b4), new THREE.Color(0x00bfff)],
+                rings: (i, count, j, pCount) => new THREE.Color().setHSL((i / count) * 0.6 + (j / pCount) * 0.2 + 0.5, 0.8, 0.6),
+                hdr: '',
+                shadowColor: 'rgba(0, 255, 255, 0.7)',
+                highlightColor: 'rgba(255, 105, 180, 1)'
+            },
+            forest: {
+                sphere: [new THREE.Color(0x228b22), new THREE.Color(0x00ff7f), new THREE.Color(0x3cb371), new THREE.Color(0x1e90ff), new THREE.Color(0x87cefa)],
+                rings: (i, count, j, pCount) => new THREE.Color().setHSL((i / count) * 0.2 + (j / pCount) * 0.1 + 0.25, 0.8, 0.55),
+                hdr: '',
+                shadowColor: 'rgba(0, 255, 127, 0.7)',
+                highlightColor: 'rgba(30, 144, 255, 1)'
+            },
+            aurora: {
+                sphere: [new THREE.Color(0x00ff7f), new THREE.Color(0x40e0d0), new THREE.Color(0x483d8b), new THREE.Color(0x9932cc), new THREE.Color(0x00fa9a)],
+                rings: (i, count, j, pCount) => new THREE.Color().setHSL((i / count) * 0.3 + (j / pCount) * 0.1 + 0.45, 0.9, 0.65),
+                hdr: '',
+                shadowColor: 'rgba(153, 50, 204, 0.7)',
+                highlightColor: 'rgba(0, 250, 154, 1)'
+            }
+        };
+        const pointMaterialShader = {
+            vertexShader: `
+                attribute float size;
+                attribute vec3 randomDir;
+                varying vec3 vColor;
+                varying float vDistance;
+                varying float vMouseEffect;
+                uniform float time;
+                uniform vec2 uMouse;
+                uniform float uExplode;
+                uniform float uWaveTimeStart;
+                uniform float uWaveSpeed;
+                uniform float uWaveWidth;
+                varying float vWaveGlow;
+                vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }
+                vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+                float snoise(vec3 v) { const vec2 C = vec2(1.0/6.0, 1.0/3.0); const vec4 D = vec4(0.0, 0.5, 1.0, 2.0); vec3 i = floor(v + dot(v, C.yyy)); vec3 x0 = v - i + dot(i, C.xxx); vec3 g = step(x0.yzx, x0.xyz); vec3 l = 1.0 - g; vec3 i1 = min(g.xyz, l.zxy); vec3 i2 = max(g.xyz, l.zxy); vec3 x1 = x0 - i1 + C.xxx; vec3 x2 = x0 - i2 + C.yyy; vec3 x3 = x0 - D.yyy; i = mod289(i); vec4 p = permute(permute(permute(i.z + vec4(0.0, i1.z, i2.z, 1.0)) + i.y + vec4(0.0, i1.y, i2.y, 1.0)) + i.x + vec4(0.0, i1.x, i2.x, 1.0)); float n_ = 0.142857142857; vec3 ns = n_ * D.wyz - D.xzx; vec4 j = p - 49.0 * floor(p * ns.z * ns.z); vec4 x_ = floor(j * ns.z); vec4 y_ = floor(j - 7.0 * x_); vec4 x = x_ * ns.x + ns.yyyy; vec4 y = y_ * ns.x + ns.yyyy; vec4 h = 1.0 - abs(x) - abs(y); vec4 b0 = vec4(x.xy, y.xy); vec4 b1 = vec4(x.zw, y.zw); vec4 s0 = floor(b0)*2.0 + 1.0; vec4 s1 = floor(b1)*2.0 + 1.0; vec4 sh = -step(h, vec4(0.0)); vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy; vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww; vec3 p0 = vec3(a0.xy,h.x); vec3 p1 = vec3(a0.zw,h.y); vec3 p2 = vec3(a1.xy,h.z); vec3 p3 = vec3(a1.zw,h.w); vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3))); p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w; vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0); m = m * m; return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3))); }
+
+                void main() {
+                    vColor = color;
+                    vec3 finalPos = position;
+                    float timeSinceWaveStart = time - uWaveTimeStart;
+                    if (timeSinceWaveStart > 0.0) {
+                        float waveRadius = timeSinceWaveStart * uWaveSpeed;
+                        float distFromCenter = length(position);
+                        float distToWave = abs(distFromCenter - waveRadius);
+                        vWaveGlow = 1.0 - smoothstep(0.0, uWaveWidth, distToWave);
+                        if (vWaveGlow > 0.0) {
+                           finalPos += normalize(position) * vWaveGlow * 3.0 * (1.0 - uExplode);
+                        }
+                    }
+                    float explodeAmount = uExplode * 35.0;
+                    float turbulence = snoise(position * 0.4 + randomDir * 2.0 + time * 0.8) * 10.0 * uExplode;
+                    vec3 explodedPos = finalPos + randomDir * (explodeAmount + turbulence);
+                    vec3 mixedPos = mix(finalPos, explodedPos, uExplode);
+                    vec4 projectedVertex = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    vec2 screenPos = projectedVertex.xy / projectedVertex.w;
+                    float mouseDist = distance(screenPos, uMouse);
+                    float mouseEffect = 1.0 - smoothstep(0.0, 0.25, mouseDist);
+                    vMouseEffect = mouseEffect;
+                    float noiseFrequency = 0.4;
+                    float noiseAmplitude = (0.8 + mouseEffect * 3.5) * (1.0 - uExplode);
+                    vec3 noiseInput = mixedPos * noiseFrequency + time * 0.5;
+                    vec3 displacement = vec3(snoise(noiseInput), snoise(noiseInput + vec3(10.0)), snoise(noiseInput + vec3(20.0)));
+                    vec3 finalPosWithNoise = mixedPos + displacement * noiseAmplitude;
+                    float pulse = sin(time + length(position)) * 0.1 + 1.0;
+                    vec4 mvPosition = modelViewMatrix * vec4(finalPosWithNoise, 1.0);
+                    vDistance = -mvPosition.z;
+                    gl_PointSize = size * (400.0 / -mvPosition.z) * pulse * (1.0 + vMouseEffect * 0.5);
+                    gl_Position = projectionMatrix * mvPosition;
+                }`,
+            fragmentShader: `
+                varying vec3 vColor;
+                varying float vMouseEffect;
+                varying float vWaveGlow;
+                uniform float time;
+                uniform float uExplode;
+                uniform float uIntroOpacity;
+                uniform float uHeartPulse;
+                float rand(vec2 co){ return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453); }
+
+                void main() {
+                    vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+                    float r = dot(cxy, cxy);
+                    if (r > 1.0) discard;
+                    float glow = exp(-r * 3.5) + vMouseEffect * 0.5;
+                    float twinkle = rand(gl_PointCoord + time) * 0.5 + 0.5;
+                    vec3 explosionColor = vec3(3.0, 1.5, 2.0);
+                    vec3 mixedColor = mix(vColor, explosionColor, uExplode * 0.8);
+                    mixedColor *= (1.0 + uExplode * 6.0);
+                    vec3 waveColor = vec3(1.5, 1.5, 1.0);
+                    mixedColor += waveColor * vWaveGlow * 1.8;
+                    vec3 finalColor = mixedColor * (1.1 + sin(time * 0.8) * 0.2 + vMouseEffect * 0.5) * glow * twinkle;
+                    finalColor *= mix(0.35, 1.05, uIntroOpacity);
+                    finalColor *= mix(0.7, 1.15, uHeartPulse);
+                    float alpha = smoothstep(0.0, 1.0, glow) * uIntroOpacity;
+                    gl_FragColor = vec4(finalColor, alpha);
+                }`
+        };
+        const starShader = {
+            vertexShader: `
+                attribute float size;
+                varying vec3 vColor;
+                varying float vIntroOpacity;
+                uniform float time;
+                uniform float uIntroOpacity;
+                uniform float uRushFactor;
+                void main() {
+                    vColor = color;
+                    vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                    float twinkle = sin(time * 3.0 + position.x * 0.1 + position.y * 0.2) * 0.3 + 0.7;
+                    float rushBoost = 1.0 + uRushFactor * (1.0 - clamp((-mvPosition.z) / 4000.0, 0.0, 1.0));
+                    gl_PointSize = size * twinkle * (1000.0 / -mvPosition.z) * rushBoost;
+                    vIntroOpacity = uIntroOpacity;
+                    gl_Position = projectionMatrix * mvPosition;
+                }`,
+            fragmentShader: `
+                varying vec3 vColor;
+                varying float vIntroOpacity;
+                void main() {
+                    vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+                    float r = dot(cxy, cxy);
+                    if (r > 1.0) discard;
+                    float glow = exp(-r * 4.0);
+                    gl_FragColor = vec4(vColor, glow * 0.8 * vIntroOpacity);
+                }`
+        };
+        const meteorShader = {
+            vertexShader: `
+                attribute vec3 velocity;
+                attribute vec2 lineInfo;
+                varying float vIsHead;
+                uniform float time;
+
+                void main() {
+                    vIsHead = lineInfo.x;
+                    float randomVal = lineInfo.y;
+                    float speed = 80.0 + randomVal * 50.0;
+                    float tailLength = 250.0 + randomVal * 350.0;
+                    float travelDistance = 2500.0;
+
+                    float progress = mod(time * speed + randomVal * travelDistance, travelDistance) / travelDistance;
+                    vec3 headPos = position + velocity * (progress * travelDistance);
+                    vec3 tailPos = headPos - normalize(velocity) * tailLength;
+                    vec3 finalPos = mix(tailPos, headPos, vIsHead);
+
+                    vec4 mvPosition = modelViewMatrix * vec4(finalPos, 1.0);
+                    gl_Position = projectionMatrix * mvPosition;
+                }`,
+            fragmentShader: `
+                varying float vIsHead;
+                uniform float uIntroOpacity;
+
+                void main() {
+                    float intensity = pow(vIsHead, 4.0);
+                    float alpha = intensity * 0.8 * uIntroOpacity;
+
+                    if (alpha < 0.01) discard;
+
+                    vec3 color = vec3(1.0, 0.9, 0.7);
+                    gl_FragColor = vec4(color * intensity, alpha);
+                }`
+        };
+
+        function createNebulaLayer(nebulaCount, particlesPerNebula, spread, size, color) {
+            const geometry = new THREE.BufferGeometry();
+            const totalParticles = nebulaCount * particlesPerNebula;
+            const positions = new Float32Array(totalParticles * 3);
+            const colors = new Float32Array(totalParticles * 3);
+            const sizes = new Float32Array(totalParticles);
+            let particleIndex = 0;
+
+            for (let i = 0; i < nebulaCount; i++) {
+                const centerX = (Math.random() - 0.5) * spread;
+                const centerY = (Math.random() - 0.5) * spread;
+                const centerZ = (Math.random() - 0.5) * spread;
+                const nebulaRadius = 150 + Math.random() * 200;
+
+                for (let j = 0; j < particlesPerNebula; j++) {
+                    const idx3 = particleIndex * 3;
+                    const u = Math.random();
+                    const v = Math.random();
+                    const theta = u * 2.0 * Math.PI;
+                    const phi = Math.acos(2.0 * v - 1.0);
+                    const r = Math.cbrt(Math.random()) * nebulaRadius;
+                    const x = centerX + r * Math.sin(phi) * Math.cos(theta);
+                    const y = centerY + r * Math.sin(phi) * Math.sin(theta);
+                    const z = centerZ + r * Math.cos(phi);
+                    positions[idx3] = x;
+                    positions[idx3 + 1] = y;
+                    positions[idx3 + 2] = z;
+
+                    const sizeRandom = Math.pow(Math.random(), 3.0);
+                    const brightness = 0.6 + sizeRandom * 1.5;
+
+                    colors[idx3] = color.r * brightness;
+                    colors[idx3 + 1] = color.g * brightness;
+                    colors[idx3 + 2] = color.b * brightness;
+
+                    sizes[particleIndex] = 0.5 + sizeRandom * size;
+                    particleIndex++;
+                }
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            const material = new THREE.ShaderMaterial({
+                uniforms: { time: { value: 0 }, uIntroOpacity: { value: 0.0 }, uRushFactor: { value: 0.0 } },
+                vertexShader: starShader.vertexShader,
+                fragmentShader: starShader.fragmentShader,
+                vertexColors: true,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+            const points = new THREE.Points(geometry, material);
+            points.renderOrder = -9;
+            return points;
+        }
+
+        const imageNMT = [
+            './image/anh1.jpg',
+            './image/anh2.jpg',
+            './image/anh3.jpg',
+            './image/anh4.jpg',
+            './image/anh5.jpg',
+            './image/anh6.jpg',
+            './image/anh7.jpg',
+            './image/anh8.jpg',
+            './image/anh9.jpg',
+            './image/anh10.jpg',
+            './image/anh11.jpg',
+            './image/anh12.jpg',
+            './image/anh13.jpg',
+            './image/anh14.jpg',
+            './image/anh15.jpg',
+            './image/anh16.jpg',
+            './image/anh17.jpg',
+            './image/anh18.jpg',
+            './image/anh19.jpg',
+            './image/anh20.jpg',
+            './image/anh21.jpg',
+            './image/anh22.jpg',
+            './image/anh23.jpg',
+            './image/anh24.jpg',
+            './image/anh25.jpg',
+            './image/anh26.jpg',
+            './image/anh27.jpg',
+            './image/anh28.jpg',
+            './image/anh29.jpg',
+            './image/anh30.jpg',
+            './image/anh31.jpg',
+            './image/anh32.jpg',
+            './image/anh33.jpg',
+            './image/anh34.jpg',
+            './image/anh35.jpg',
+            './image/anh36.jpg',
+            './image/anh37.jpg',
+            './image/anh38.jpg',
+            './image/anh39.jpg',
+            './image/anh40.jpg',
+            './image/anh41.jpg',
+            './image/anh42.jpg',
+            './image/anh43.jpg',
+            './image/anh44.jpg'
+        ];
+        const textNMT = [
+            "Chúc mừng ngày 20/11",
+            "Ngày nhà giáo Việt Nam",
+            "Chúc thầy cô luôn luôn mạnh khỏe",
+            "Luôn luôn dồi dào sức khỏe",
+            "Ngập tràn hạnh phúc",
+            "Giữ vững ngọn lửa nhiệt huyết với nghề"
+        ];
+
+        function createOrbitingItems() {
+            const container = document.getElementById('love-container');
+            if (!container || !orbitRings || orbitRings.children.length === 0) return;
+            container.innerHTML = '';
+
+            orbitingItemsData.forEach(item => { if (item.proxy) item.proxy.removeFromParent(); });
+            orbitingItemsData = [];
+
+            const sourceItems = [];
+            const totalSourceItems = Math.max(imageNMT.length, textNMT.length);
+            for (let i = 0; i < totalSourceItems; i++) {
+                if (imageNMT[i]) sourceItems.push({ type: 'img', content: imageNMT[i] });
+                if (textNMT[i]) sourceItems.push({ type: 'p', content: textNMT[i] });
+            }
+            if (sourceItems.length === 0) return;
+
+            let allItems = [];
+            const TARGET_ITEM_COUNT = window.innerWidth < 768 ? 18 : 28;
+            while (allItems.length < TARGET_ITEM_COUNT) { allItems = allItems.concat(sourceItems); }
+            if (sourceItems.length >= TARGET_ITEM_COUNT) { allItems = sourceItems; }
+
+            const numRings = orbitRings.children.length;
+            const itemsPerRing = new Array(numRings).fill(0);
+            allItems.forEach((_, index) => { itemsPerRing[index % numRings]++; });
+            const ringItemCounters = new Array(numRings).fill(0);
+            const shouldAnimateIntro = !introCompleted;
+
+            allItems.forEach((item, index) => {
+                const orbitItem = document.createElement('div');
+                orbitItem.className = 'orbiting-item';
+                if (shouldAnimateIntro) {
+                    orbitItem.classList.add('intro-phase');
+                }
+                const element = document.createElement(item.type);
+                if (item.type === 'img') { element.src = item.content; }
+                else { element.innerHTML = item.content; }
+                orbitItem.appendChild(element);
+                container.appendChild(orbitItem);
+                const ringIndex = index % numRings;
+                const targetRing = orbitRings.children[ringIndex];
+                const numItemsOnThisRing = itemsPerRing[ringIndex];
+                const itemIndexOnThisRing = ringItemCounters[ringIndex];
+                const baseRadius = targetRing.userData.baseRadius;
+                const angle = (itemIndexOnThisRing / numItemsOnThisRing) * Math.PI * 2;
+                const ringRotationOffset = ringIndex * 0.9;
+                const finalAngle = angle + ringRotationOffset;
+                const radiusJitter = (Math.random() - 0.5) * 1.0;
+                const heightJitter = (Math.random() - 0.5) * 2.5;
+                const proxy = new THREE.Object3D();
+                const finalLocalPosition = new THREE.Vector3(
+                    Math.cos(finalAngle) * (baseRadius + radiusJitter),
+                    heightJitter,
+                    Math.sin(finalAngle) * (baseRadius + radiusJitter)
+                );
+                const introMultiplier = shouldAnimateIntro ? (2.5 + Math.random() * 1.5) : 1.0;
+                const introStartPosition = finalLocalPosition.clone().multiplyScalar(introMultiplier);
+                proxy.position.copy(shouldAnimateIntro ? introStartPosition : finalLocalPosition);
+                targetRing.add(proxy);
+                ringItemCounters[ringIndex]++;
+                const initialWorldPos = new THREE.Vector3();
+                proxy.updateWorldMatrix(true, false);
+                proxy.getWorldPosition(initialWorldPos);
+
+                const itemData = {
+                    element: orbitItem,
+                    contentElement: element,
+                    proxy: proxy,
+                    lastWorldPos: initialWorldPos,
+                    introStartPos: introStartPosition,
+                    introEndPos: finalLocalPosition.clone(),
+                    introDelay: shouldAnimateIntro ? INTRO_PHOTO_DELAY_BASE + (index % 6) * INTRO_PHOTO_STAGGER : 0,
+                    introDuration: INTRO_PHOTO_DURATION + Math.random() * 0.35,
+                    introVisibility: shouldAnimateIntro ? 0 : 1
+                };
+
+                window.attachItemClickListener(orbitItem, itemData);
+                orbitingItemsData.push(itemData);
+            });
+        }
+
+
+
+        function updateDOMItemsPositions() {
+            const scaleFactor = 45;
+            const tempVector = new THREE.Vector3();
+            const worldPos = new THREE.Vector3();
+            const cameraLookDir = new THREE.Vector3();
+            const rotationMatrix = new THREE.Matrix4();
+            const worldQuaternion = new THREE.Quaternion();
+
+            camera.getWorldDirection(cameraLookDir);
+
+            const HEART_CENTER = new THREE.Vector3(0, 5, 0);
+            const HEART_FADE_ZONE = 12.0;
+            const heartDepth = HEART_CENTER.clone().sub(camera.position).dot(cameraLookDir);
+
+            orbitingItemsData.forEach(item => {
+                item.proxy.getWorldPosition(worldPos);
+                tempVector.copy(worldPos).project(camera);
+                const x = (tempVector.x * 0.5 + 0.5) * window.innerWidth;
+                const y = (tempVector.y * -0.5 + 0.5) * window.innerHeight;
+
+                item.element.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+
+                if (tempVector.z > 1 || !isFinite(x) || !isFinite(y)) {
+                    item.element.style.visibility = 'hidden';
+                    item.element.style.pointerEvents = 'none';
+                    return;
+                }
+                item.element.style.visibility = 'visible';
+
+                let finalOpacity;
+                if (isFocused && item === focusedItem) {
+                    finalOpacity = 1.0;
+                } else {
+                    finalOpacity = 1.0;
+                    const itemDepth = worldPos.clone().sub(camera.position).dot(cameraLookDir);
+                    const depthDifference = itemDepth - heartDepth;
+                    finalOpacity *= (1.0 - smoothstep(0, HEART_FADE_ZONE, depthDifference));
+                    const distanceToCenter = worldPos.length();
+                    finalOpacity *= smoothstep(12.0, 18.0, distanceToCenter);
+                    const distanceToCamera = worldPos.distanceTo(camera.position);
+                    finalOpacity *= smoothstep(150, 120, distanceToCamera);
+                }
+                const introVisibility = introCompleted ? 1 : (item.introVisibility ?? 0);
+                finalOpacity *= introVisibility;
+
+                item.element.style.opacity = finalOpacity;
+                item.element.style.pointerEvents = finalOpacity > 0.1 ? 'auto' : 'none';
+
+                const distanceToCamera = worldPos.distanceTo(camera.position);
+                const scale = Math.max(0.1, Math.min(2.0, scaleFactor / distanceToCamera));
+                let contentTransform;
+
+                if (isFocused && item === focusedItem) {
+                    contentTransform = `scale(${scale})`;
+                } else {
+                    const pos = item.proxy.position;
+                    const angleY = Math.atan2(pos.x, pos.z) + Math.PI / 2;
+                    const angleX = Math.atan2(pos.y, Math.sqrt(pos.x * pos.x + pos.z * pos.z)) * -1;
+                    worldQuaternion.setFromEuler(new THREE.Euler(angleX, angleY, 0, 'YXZ'));
+                    rotationMatrix.makeRotationFromQuaternion(worldQuaternion);
+                    const M = rotationMatrix.elements;
+                    const cssMatrix3d = `matrix3d(${M[0]},${M[1]},${M[2]},0,${M[4]},${M[5]},${M[6]},0,${M[8]},${M[9]},${M[10]},0,0,0,0,1)`;
+                    contentTransform = `${cssMatrix3d} scale(${scale})`;
+                }
+
+                item.contentElement.style.transform = contentTransform;
+                item.element.style.zIndex = Math.floor(1000 - distanceToCamera);
+            });
+        }
+
+        const F2 = 0.5 * (Math.sqrt(3.0) - 1.0);
+        const G2 = (3.0 - Math.sqrt(3.0)) / 6.0;
+        const F3 = 1.0 / 3.0;
+        const G3 = 1.0 / 6.0;
+        let p = new Uint8Array(256);
+        for (let i = 0; i < 256; i++) p[i] = i;
+        let perm = new Uint8Array(512);
+        let permMod12 = new Uint8Array(512);
+        for (let i = 0; i < 512; i++) {
+            perm[i] = p[i & 255];
+            permMod12[i] = perm[i] % 12;
+        }
+        function grad3(hash, x, y, z) {
+            let h = hash & 15;
+            let u = h < 8 ? x : y;
+            let v = h < 4 ? y : h === 12 || h === 14 ? x : z;
+            return ((h & 1) === 0 ? u : -u) + ((h & 2) === 0 ? v : -v);
+        }
+        function snoise(v) {
+            let x = v.x, y = v.y, z = v.z;
+            let s = (x + y + z) * F3;
+            let i = Math.floor(x + s);
+            let j = Math.floor(y + s);
+            let k = Math.floor(z + s);
+            let t = (i + j + k) * G3;
+            let X0 = i - t;
+            let Y0 = j - t;
+            let Z0 = k - t;
+            let x0 = x - X0;
+            let y0 = y - Y0;
+            let z0 = z - Z0;
+            let i1, j1, k1;
+            let i2, j2, k2;
+            if (x0 >= y0) {
+                if (y0 >= z0) { i1 = 1; j1 = 0; k1 = 0; i2 = 1; j2 = 1; k2 = 0; }
+                else if (x0 >= z0) { i1 = 1; j1 = 0; k1 = 0; i2 = 1; j2 = 0; k2 = 1; }
+                else { i1 = 0; j1 = 0; k1 = 1; i2 = 1; j2 = 0; k2 = 1; }
+            } else {
+                if (y0 < z0) { i1 = 0; j1 = 0; k1 = 1; i2 = 0; j2 = 1; k2 = 1; }
+                else if (x0 < z0) { i1 = 0; j1 = 1; k1 = 0; i2 = 0; j2 = 1; k2 = 1; }
+                else { i1 = 0; j1 = 1; k1 = 0; i2 = 1; j2 = 1; k2 = 0; }
+            }
+            let x1 = x0 - i1 + G3;
+            let y1 = y0 - j1 + G3;
+            let z1 = z0 - k1 + G3;
+            let x2 = x0 - i2 + 2.0 * G3;
+            let y2 = y0 - j2 + 2.0 * G3;
+            let z2 = z0 - k2 + 2.0 * G3;
+            let x3 = x0 - 1.0 + 3.0 * G3;
+            let y3 = y0 - 1.0 + 3.0 * G3;
+            let z3 = z0 - 1.0 + 3.0 * G3;
+            let ii = i & 255;
+            let jj = j & 255;
+            let kk = k & 255;
+            let gi0 = perm[ii + perm[jj + perm[kk]]] % 31;
+            let gi1 = perm[ii + i1 + perm[jj + j1 + perm[kk + k1]]] % 31;
+            let gi2 = perm[ii + i2 + perm[jj + j2 + perm[kk + k2]]] % 31;
+            let gi3 = perm[ii + 1 + perm[jj + 1 + perm[kk + 1]]] % 31;
+            let n0, n1, n2, n3;
+            let t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;
+            if (t0 < 0) n0 = 0.0;
+            else { t0 *= t0; n0 = t0 * t0 * grad3(gi0, x0, y0, z0); }
+            let t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;
+            if (t1 < 0) n1 = 0.0;
+            else { t1 *= t1; n1 = t1 * t1 * grad3(gi1, x1, y1, z1); }
+            let t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;
+            if (t2 < 0) n2 = 0.0;
+            else { t2 *= t2; n2 = t2 * t2 * grad3(gi2, x2, y2, z2); }
+            let t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;
+            if (t3 < 0) n3 = 0.0;
+            else { t3 *= t3; n3 = t3 * t3 * grad3(gi3, x3, y3, z3); }
+            return 32.0 * (n0 + n1 + n2 + n3);
+        }
+        function smoothstep(edge0, edge1, x) {
+            const t = Math.max(0, Math.min(1, (x - edge0) / (edge1 - edge0)));
+            return t * t * (3 - 2 * t);
+        }
+        function init() {
+            clock = new THREE.Clock();
+            scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x040418, 0.007);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 50000);
+            camera.position.set(0, 5, 0);
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x000000);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+            document.body.appendChild(renderer.domElement);
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true; controls.dampingFactor = 0.04; controls.rotateSpeed = 0.6;
+            controls.minDistance = 15;
+            controls.maxDistance = 50;
+            controls.target.copy(RETURN_TARGET);
+            controls.autoRotate = false;
+            controls.autoRotateSpeed = 0.6;
+            controls.enabled = false;
+            controls.addEventListener('change', updateDOMItemsPositions);
+            const renderScene = new RenderPass(scene, camera);
+            const bloomStrength = isMobile ? 0.9 : 1.2;
+            const bloomRadius = isMobile ? 0.3 : 0.4;
+            const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), bloomStrength, bloomRadius, 0.85);
+            bloomPass.threshold = 0.1;
+            composer = new EffectComposer(renderer);
+            composer.addPass(renderScene); composer.addPass(bloomPass);
+            const heartParticles = isMobile ? 8000 : 15000;
+            coreHeart = createHeartShape(heartParticles);
+            orbitRings = createOrbitRings(18, 8, 0.8);
+            distantStars = createParticleLayer(isMobile ? 5000 : 10000, 40000, 1.8, new THREE.Color(0.7, 0.7, 1.0));
+            nearerStars = createParticleLayer(isMobile ? 1000 : 2000, 25000, 2.5, new THREE.Color(1.0, 1.0, 0.9));
+            spaceDust = createParticleLayer(isMobile ? 250 : 500, 15000, 3.0, new THREE.Color(1.0, 0.8, 1.0));
+            pinkNebulae = createNebulaLayer(isMobile ? 20 : 40, 150, 35000, 15.0, new THREE.Color(0.8, 0.3, 1.0));
+            blueNebulae = createNebulaLayer(isMobile ? 15 : 30, 150, 35000, 15.0, new THREE.Color(0.3, 0.5, 1.0));
+            const meteorCount = isMobile ? 30 : 50;
+            meteorShower = createMeteorShower(meteorCount, 25000);
+
+            const nebulaParticleCount = isMobile ? 400 : 800;
+            backgroundNebula1 = createBackgroundNebula(nebulaParticleCount, 40000, 1500, new THREE.Color(0x1a0033), new THREE.Color(0x33001a));
+            backgroundNebula2 = createBackgroundNebula(nebulaParticleCount, 40000, 1500, new THREE.Color(0x001a33), new THREE.Color(0x190033));
+            backgroundNebula2.rotation.y = Math.PI / 2;
+
+            mainGroup = new THREE.Group();
+            mainGroup.add(coreHeart);
+            mainGroup.add(orbitRings);
+            scene.add(mainGroup);
+            scene.add(meteorShower);
+            scene.add(distantStars);
+            scene.add(nearerStars);
+            scene.add(spaceDust);
+            scene.add(pinkNebulae);
+            scene.add(blueNebulae);
+            scene.add(backgroundNebula1);
+            scene.add(backgroundNebula2);
+            centralLight = new THREE.PointLight(0xffffff, 3, 0);
+            centralLight.position.set(0, 0, 0);
+            scene.add(centralLight);
+
+            function focusOnItem(itemData) {
+                if (isFocused && focusedItem !== itemData) {
+                    returnToDefaultView(true);
+                }
+                clearTimeout(returnTimeout);
+                itemData.proxy.updateWorldMatrix(true, false);
+                isFocused = true;
+                focusedItem = itemData;
+
+                controls.autoRotate = false;
+                controls.minDistance = 10;
+                controls.maxDistance = 40;
+
+                itemData.element.classList.add('focused');
+                orbitingItemsData.forEach(item => {
+                    item.element.classList.toggle('unfocused', item !== focusedItem);
+                });
+
+                returnTimeout = setTimeout(returnToDefaultView, 5000);
+            }
+
+            function returnToDefaultView(immediate = false) {
+                if (!isFocused) return;
+                clearTimeout(returnTimeout);
+                controls.minDistance = 15;
+                controls.maxDistance = 50;
+                if (focusedItem) focusedItem.element.classList.remove('focused');
+                orbitingItemsData.forEach(item => {
+                    item.element.classList.remove('unfocused');
+                });
+                isFocused = false;
+                if (immediate) {
+                    focusedItem = null;
+                }
+            }
+
+            window.attachItemClickListener = (itemElement, itemData) => {
+                const handleInteraction = (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    setTimeout(() => { isTransitioning = false; }, 750);
+                    if (isFocused && focusedItem === itemData) {
+                        returnToDefaultView();
+                    } else {
+                        focusOnItem(itemData);
+                    }
+                };
+                itemElement.addEventListener('pointerdown', handleInteraction);
+            };
+
+            changeTheme("love");
+            window.addEventListener('resize', onWindowResize);
+            window.addEventListener('mousemove', onMouseMove);
+            document.querySelectorAll('.theme-swatch').forEach(swatch => {
+                swatch.addEventListener('click', () => changeTheme(swatch.dataset.theme));
+            });
+            raycaster.params.Points.threshold = 0.5;
+            document.getElementById('explode-btn').addEventListener('click', triggerExplosion);
+            function toggleFullScreen() {
+                const doc = window.document;
+                const docEl = doc.documentElement;
+
+                const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+                const cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+                if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                    if (requestFullScreen) {
+                        requestFullScreen.call(docEl);
+                    }
+                } else {
+                    if (cancelFullScreen) {
+                        cancelFullScreen.call(doc);
+                    }
+                }
+            }
+
+            document.getElementById('fullscreen-btn').addEventListener('click', toggleFullScreen);
+            renderer.domElement.addEventListener('pointerdown', (event) => {
+                if (event.target.closest('.orbiting-item')) {
+                    return;
+                }
+                if (isFocused) {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    setTimeout(() => { isTransitioning = false; }, 750);
+
+                    returnToDefaultView();
+                }
+            }, false);
+            createOrbitingItems();
+            onWindowResize();
+            startIntroSequence();
+        }
+
+        function createHeartShape(particleCount) {
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+            const sizes = new Float32Array(particleCount);
+            const randomDirs = new Float32Array(particleCount * 3).fill(0);
+            const scale = 0.5;
+            const edgeRatio = 0.35;
+
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                const t = Math.random() * Math.PI * 2;
+                let r;
+                if (i < particleCount * edgeRatio) {
+                    r = 1.0 - Math.random() * 0.08;
+                    sizes[i] = Math.random() * 0.3 + 0.2;
+                } else {
+                    r = Math.pow(Math.random(), 1.5) * 0.92;
+                    sizes[i] = (1.0 - r) * 0.18 + 0.1;
+                }
+
+                const x_boundary = 16 * Math.pow(Math.sin(t), 3);
+                const y_boundary = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+
+                positions[i3] = x_boundary * scale * r;
+                positions[i3 + 1] = y_boundary * scale * r + 5;
+                positions[i3 + 2] = (Math.random() - 0.5) * 2.5;
+            }
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            geometry.setAttribute('randomDir', new THREE.BufferAttribute(randomDirs, 3));
+            const material = createPointShaderMaterial();
+            material.uniforms.uExplode.value = 0;
+            return new THREE.Points(geometry, material);
+        }
+
+        function createOrbitRings(radius, count, thickness) {
+            const group = new THREE.Group();
+            for (let i = 0; i < count; i++) {
+                const particleCount = isMobile ? 600 : 1200;
+                const ringGeometry = new THREE.BufferGeometry();
+                const positions = new Float32Array(particleCount * 3); const colors = new Float32Array(particleCount * 3);
+                const sizes = new Float32Array(particleCount); const randomDirs = new Float32Array(particleCount * 3);
+                const randomVec = new THREE.Vector3();
+                for (let j = 0; j < particleCount; j++) {
+                    const j3 = j * 3; const angle = (j / particleCount) * Math.PI * 2;
+                    const radiusVariation = radius + i * 1.5 + (Math.random() - 0.5) * thickness;
+                    positions[j3] = Math.cos(angle) * radiusVariation;
+                    positions[j3 + 1] = (Math.random() - 0.5) * (thickness * 0.5);
+                    positions[j3 + 2] = Math.sin(angle) * radiusVariation;
+                    sizes[j] = Math.random() * 0.1 + 0.05;
+                    randomVec.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1).normalize();
+                    randomDirs[j3] = randomVec.x; randomDirs[j3 + 1] = randomVec.y; randomDirs[j3 + 2] = randomVec.z;
+                }
+                ringGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                ringGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+                ringGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+                ringGeometry.setAttribute('randomDir', new THREE.BufferAttribute(randomDirs, 3));
+                const ring = new THREE.Points(ringGeometry, createPointShaderMaterial());
+                ring.userData.baseRadius = radius + i * 1.5;
+                ring.rotation.x = Math.random() * Math.PI; ring.rotation.y = Math.random() * Math.PI;
+                group.add(ring);
+            }
+            return group;
+        }
+
+        function createParticleLayer(count, spread, size, color) {
+            const geometry = new THREE.BufferGeometry();
+            const positions = [];
+            const colors = [];
+            const sizes = [];
+
+            for (let i = 0; i < count; i++) {
+                positions.push(
+                    (Math.random() - 0.5) * spread,
+                    (Math.random() - 0.5) * spread,
+                    (Math.random() - 0.5) * spread
+                );
+                colors.push(color.r, color.g, color.b);
+                sizes.push(size * (Math.random() * 0.5 + 0.5));
+            }
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
+            const material = new THREE.ShaderMaterial({
+                uniforms: { time: { value: 0 }, uIntroOpacity: { value: 0.0 }, uRushFactor: { value: 0.0 } },
+                vertexShader: starShader.vertexShader,
+                fragmentShader: starShader.fragmentShader,
+                vertexColors: true,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+            const points = new THREE.Points(geometry, material);
+            points.rotation.x = Math.random() * Math.PI;
+            points.rotation.y = Math.random() * Math.PI;
+            points.rotation.z = Math.random() * Math.PI;
+            if (spread > 30000) points.renderOrder = -10;
+            else if (spread > 20000) points.renderOrder = -8;
+            else points.renderOrder = -7;
+            return points;
+        }
+        function createMeteorShower(count, spread) {
+            const geometry = new THREE.BufferGeometry();
+            const positions = [];
+            const velocities = [];
+            const lineInfos = [];
+
+            const backgroundDepth = -3000;
+            const zoneWidth = spread / count;
+
+            for (let i = 0; i < count; i++) {
+                const baseX = ((i / count) - 0.5) * spread;
+                const randomXOffset = (Math.random() - 0.5) * zoneWidth * 0.9;
+                const finalX = baseX + randomXOffset;
+                const finalY = (Math.random() - 0.5) * spread * 0.6 + spread * 0.1;
+
+                const startPos = new THREE.Vector3(
+                    finalX,
+                    finalY,
+                    backgroundDepth + (Math.random() - 0.5) * 500
+                );
+                const angle = (Math.random() - 0.5) * Math.PI * 0.4;
+                const speedMultiplier = Math.random() * 2.5 + 1.5;
+                const velocity = new THREE.Vector3(
+                    Math.sin(angle),
+                    -Math.cos(angle),
+                    0
+                ).normalize().multiplyScalar(speedMultiplier);
+
+                const randomOffset = Math.random();
+
+                positions.push(startPos.x, startPos.y, startPos.z);
+                velocities.push(velocity.x, velocity.y, velocity.z);
+                lineInfos.push(1.0, randomOffset);
+
+                positions.push(startPos.x, startPos.y, startPos.z);
+                velocities.push(velocity.x, velocity.y, velocity.z);
+                lineInfos.push(0.0, randomOffset);
+            }
+
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            geometry.setAttribute('velocity', new THREE.Float32BufferAttribute(velocities, 3));
+            geometry.setAttribute('lineInfo', new THREE.Float32BufferAttribute(lineInfos, 2));
+
+            const material = new THREE.ShaderMaterial({
+                uniforms: { time: { value: 0 }, uIntroOpacity: { value: 0.0 } },
+                vertexShader: meteorShader.vertexShader,
+                fragmentShader: meteorShader.fragmentShader,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+
+            return new THREE.LineSegments(geometry, material);
+        }
+
+        function createIntroStreaks(count = 500) {
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(count * 3);
+            const speeds = new Float32Array(count);
+            const offsets = new Float32Array(count);
+
+            for (let i = 0; i < count; i++) {
+                const i3 = i * 3;
+                positions[i3] = (Math.random() - 0.5) * 90;
+                positions[i3 + 1] = (Math.random() - 0.5) * 90;
+                positions[i3 + 2] = (Math.random() - 0.5) * 1600;
+                speeds[i] = 0.4 + Math.random() * 1.2;
+                offsets[i] = Math.random();
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('speed', new THREE.BufferAttribute(speeds, 1));
+            geometry.setAttribute('offset', new THREE.BufferAttribute(offsets, 1));
+
+            const material = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 },
+                    uProgress: { value: 0 }
+                },
+                vertexShader: `
+                    attribute float speed;
+                    attribute float offset;
+                    uniform float time;
+                    uniform float uProgress;
+                    varying float vAlpha;
+
+                    void main() {
+                        float travel = fract(time * speed + offset);
+                        float depthRange = 2200.0;
+                        float zPos = -1100.0 + travel * depthRange;
+                        vec3 pos = vec3(position.xy * (1.0 + (1.0 - travel) * 0.45), zPos);
+                        vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+                        float focus = smoothstep(-400.0, 200.0, -mvPosition.z);
+                        vAlpha = focus * uProgress * (1.0 - travel);
+                        gl_PointSize = (8.0 - travel * 6.0) * max(0.2, uProgress);
+                        gl_Position = projectionMatrix * mvPosition;
+                    }`,
+                fragmentShader: `
+                    varying float vAlpha;
+
+                    void main() {
+                        vec2 uv = gl_PointCoord - vec2(0.5);
+                        float d = dot(uv, uv);
+                        if (d > 0.25) discard;
+                        float glow = exp(-d * 6.0);
+                        gl_FragColor = vec4(1.0, 0.7, 1.0, glow * vAlpha);
+                    }`,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+
+            const streaks = new THREE.Points(geometry, material);
+            streaks.renderOrder = 5;
+            return streaks;
+        }
+
+        function createBackgroundNebula(count, spread, size, color1, color2) {
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(count * 3);
+            const colors = new Float32Array(count * 3);
+            const tempColor = new THREE.Color();
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const textureSize = 128;
+            canvas.width = textureSize;
+            canvas.height = textureSize;
+            const gradient = context.createRadialGradient(textureSize / 2, textureSize / 2, 0, textureSize / 2, textureSize / 2, textureSize / 2);
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+            gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.2)');
+            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, textureSize, textureSize);
+            const nebulaTexture = new THREE.CanvasTexture(canvas);
+
+            for (let i = 0; i < count; i++) {
+                const i3 = i * 3;
+                positions[i3] = (Math.random() - 0.5) * spread;
+                positions[i3 + 1] = (Math.random() - 0.5) * spread * 0.3;
+                positions[i3 + 2] = (Math.random() - 0.5) * spread;
+
+                tempColor.copy(color1).lerp(color2, Math.random());
+                colors[i3] = tempColor.r;
+                colors[i3 + 1] = tempColor.g;
+                colors[i3 + 2] = tempColor.b;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: size * (isMobile ? 2.5 : 3.5),
+                map: nebulaTexture,
+                vertexColors: true,
+                blending: THREE.AdditiveBlending,
+                transparent: true,
+                opacity: isMobile ? 0.4 : 0.5,
+                depthWrite: false,
+                sizeAttenuation: true,
+            });
+            material.userData = material.userData || {};
+            material.userData.baseOpacity = material.opacity;
+
+            const points = new THREE.Points(geometry, material);
+            points.renderOrder = -100;
+            return points;
+        }
+
+
+        function createPointShaderMaterial() {
+            return new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 },
+                    uMouse: { value: mouse },
+                    uExplode: { value: 0.0 },
+                    uWaveTimeStart: { value: 0.0 },
+                    uWaveSpeed: { value: WAVE_SPEED },
+                    uWaveWidth: { value: WAVE_WIDTH },
+                    uIntroOpacity: { value: 0.0 },
+                    uHeartPulse: { value: 1.0 }
+                },
+                vertexShader: pointMaterialShader.vertexShader,
+                fragmentShader: pointMaterialShader.fragmentShader,
+                vertexColors: true,
+                transparent: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending
+            });
+        }
+
+        function applyIntroOpacity(target, opacity, rushFactor = 0) {
+            if (!target) return;
+            const mat = target.material;
+            if (Array.isArray(mat)) return;
+            const clamped = THREE.MathUtils.clamp(opacity, 0, 1);
+            if (mat && mat.uniforms) {
+                if (mat.uniforms.uIntroOpacity) {
+                    mat.uniforms.uIntroOpacity.value = clamped;
+                }
+                if (mat.uniforms.uRushFactor) {
+                    mat.uniforms.uRushFactor.value = rushFactor;
+                }
+            } else if (mat && mat.userData && typeof mat.userData.baseOpacity === 'number') {
+                mat.opacity = mat.userData.baseOpacity * clamped;
+            }
+        }
+
+        function applyBackgroundOpacity(target, opacity) {
+            if (!target || !target.material) return;
+            const baseOpacity = target.material.userData?.baseOpacity;
+            if (typeof baseOpacity === 'number') {
+                target.material.opacity = baseOpacity * THREE.MathUtils.clamp(opacity, 0, 1);
+            }
+        }
+
+        function updateCameraAnchors(aspectRatio = window.innerWidth / window.innerHeight) {
+            const safeAspect = aspectRatio || 1;
+            const depth = 34 / Math.min(safeAspect, 1.0);
+            const lateral = depth * 0.42;
+            cameraFinalPosition.set(lateral, 13, depth);
+            cameraOffset.copy(cameraFinalPosition).sub(introTarget);
+            const offsetLength = cameraOffset.length() || 1;
+            cameraOffset.normalize();
+            introCameraStart.copy(cameraOffset).multiplyScalar(offsetLength * 5.5).add(introTarget);
+            introCameraStart.y += 25;
+        }
+
+        function startIntroSequence() {
+            introCompleted = false;
+            introStartTime = clock.getElapsedTime();
+            updateCameraAnchors();
+            camera.position.copy(introCameraStart);
+            camera.lookAt(introTarget);
+            controls.enabled = false;
+            controls.autoRotate = false;
+            if (!introStreaks) {
+                introStreaks = createIntroStreaks(isMobile ? 260 : 500);
+            }
+            if (introStreaks && !scene.children.includes(introStreaks)) {
+                scene.add(introStreaks);
+            }
+            orbitingItemsData.forEach(item => {
+                if (item.element) {
+                    item.element.classList.add('intro-phase');
+                }
+                item.introVisibility = item.introVisibility ?? 0;
+            });
+        }
+
+        function updateIntroOrbitItems(introElapsed) {
+            if (introCompleted) return;
+            orbitingItemsData.forEach(item => {
+                if (!item.introStartPos || !item.introEndPos) return;
+                const delay = item.introDelay || 0;
+                const duration = item.introDuration || INTRO_PHOTO_DURATION;
+                const rawProgress = (introElapsed - delay) / duration;
+                const clamped = THREE.MathUtils.clamp(rawProgress, 0, 1);
+                const eased = easeInOutCubic(clamped);
+                tempPhotoLerp.lerpVectors(item.introStartPos, item.introEndPos, eased);
+                item.proxy.position.copy(tempPhotoLerp);
+                item.introVisibility = eased;
+            });
+        }
+
+        function updateIntroSequence(currentTime) {
+            if (introCompleted || !coreHeart) return;
+            const elapsed = currentTime - introStartTime;
+            const normalized = THREE.MathUtils.clamp(elapsed / INTRO_TOTAL_DURATION, 0, 1);
+            const easedCam = easeInOutCubic(normalized);
+            tempCameraLerp.copy(introCameraStart).lerp(cameraFinalPosition, easedCam);
+            camera.position.copy(tempCameraLerp);
+            camera.lookAt(introTarget);
+
+            const starVisibility = THREE.MathUtils.clamp(elapsed / INTRO_STAR_PHASE, 0, 1);
+            const rushFactor = THREE.MathUtils.clamp((elapsed - 0.2) / INTRO_TOTAL_DURATION, 0, 1);
+            applyIntroOpacity(distantStars, 0.05 + starVisibility * 0.95, rushFactor * 1.2);
+            applyIntroOpacity(nearerStars, starVisibility, rushFactor);
+            applyIntroOpacity(spaceDust, Math.pow(starVisibility, 1.2), rushFactor * 0.6);
+            applyIntroOpacity(pinkNebulae, Math.pow(starVisibility, 0.8));
+            applyIntroOpacity(blueNebulae, Math.pow(starVisibility, 0.8));
+            applyIntroOpacity(meteorShower, Math.pow(starVisibility, 1.4));
+            applyBackgroundOpacity(backgroundNebula1, starVisibility * 0.85);
+            applyBackgroundOpacity(backgroundNebula2, starVisibility * 0.85);
+
+            const heartPhase = THREE.MathUtils.clamp((elapsed - INTRO_HEART_REVEAL_START) / INTRO_HEART_REVEAL_DURATION, 0, 1);
+            const heartOpacity = easeInOutCubic(heartPhase);
+            applyIntroOpacity(coreHeart, heartOpacity);
+            const pulse = 0.8 + Math.sin(currentTime * 3.4) * 0.3 * heartOpacity;
+            if (coreHeart.material.uniforms.uHeartPulse) {
+                coreHeart.material.uniforms.uHeartPulse.value = pulse;
+            }
+            if (orbitRings) {
+                const ringOpacity = Math.min(1, heartOpacity + 0.2);
+                orbitRings.children.forEach(ring => applyIntroOpacity(ring, ringOpacity));
+            }
+
+            if (introStreaks) {
+                introStreaks.material.uniforms.time.value = currentTime;
+                introStreaks.material.uniforms.uProgress.value = THREE.MathUtils.clamp((elapsed - 0.15) / (INTRO_TOTAL_DURATION * 0.8), 0, 1);
+            }
+            updateIntroOrbitItems(elapsed);
+
+            if (normalized >= 1) {
+                completeIntroSequence();
+            }
+        }
+
+        function completeIntroSequence() {
+            if (introCompleted) return;
+            introCompleted = true;
+            controls.enabled = true;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.6;
+            applyIntroOpacity(coreHeart, 1);
+            if (coreHeart.material.uniforms.uHeartPulse) {
+                coreHeart.material.uniforms.uHeartPulse.value = 1.0;
+            }
+            if (orbitRings) {
+                orbitRings.children.forEach(ring => applyIntroOpacity(ring, 1));
+            }
+            applyIntroOpacity(distantStars, 1);
+            applyIntroOpacity(nearerStars, 1);
+            applyIntroOpacity(spaceDust, 1);
+            applyIntroOpacity(pinkNebulae, 1);
+            applyIntroOpacity(blueNebulae, 1);
+            applyIntroOpacity(meteorShower, 1);
+            applyBackgroundOpacity(backgroundNebula1, 1);
+            applyBackgroundOpacity(backgroundNebula2, 1);
+            if (introStreaks) {
+                scene.remove(introStreaks);
+                introStreaks.geometry.dispose();
+                introStreaks.material.dispose();
+                introStreaks = null;
+            }
+            orbitingItemsData.forEach(item => {
+                item.introVisibility = 1;
+                if (item.introEndPos) item.proxy.position.copy(item.introEndPos);
+                if (item.element) item.element.classList.remove('intro-phase');
+            });
+            camera.position.copy(cameraFinalPosition);
+            camera.lookAt(introTarget);
+            controls.update();
+        }
+
+        function focusOnItem(itemData) {
+            if (returnTimeout) clearTimeout(returnTimeout);
+            isFocused = true;
+            focusedItem = itemData;
+            controls.autoRotate = false;
+            controls.minDistance = 10;
+            controls.maxDistance = 40;
+            orbitingItemsData.forEach(item => {
+                item.element.classList.toggle('unfocused', item !== focusedItem);
+            });
+            returnTimeout = setTimeout(returnToDefaultView, 8000);
+        }
+
+        function returnToDefaultView() {
+            if (!isFocused) return;
+            if (returnTimeout) clearTimeout(returnTimeout);
+            isFocused = false;
+            controls.minDistance = 15;
+            controls.maxDistance = 50;
+            orbitingItemsData.forEach(item => {
+                item.element.classList.remove('unfocused');
+            });
+        }
+
+        function changeTheme(themeName) {
+            const theme = themes[themeName]; if (!theme) return;
+            const sphereColorsAttr = coreHeart.geometry.attributes.color;
+            for (let i = 0; i < sphereColorsAttr.count; i++) {
+                const colorPos = (i / sphereColorsAttr.count) * (theme.sphere.length - 1);
+                const c1 = theme.sphere[Math.floor(colorPos)];
+                const c2 = theme.sphere[Math.min(Math.floor(colorPos) + 1, theme.sphere.length - 1)];
+                const newColor = new THREE.Color().copy(c1).lerp(c2, colorPos - Math.floor(colorPos));
+                sphereColorsAttr.setXYZ(i, newColor.r, newColor.g, newColor.b);
+            }
+            sphereColorsAttr.needsUpdate = true;
+            orbitRings.children.forEach((ring, i) => {
+                const ringColorsAttr = ring.geometry.attributes.color;
+                for (let j = 0; j < ringColorsAttr.count; j++) {
+                    const newColor = theme.rings(i, orbitRings.children.length, j, ringColorsAttr.count);
+                    ringColorsAttr.setXYZ(j, newColor.r, newColor.g, newColor.b);
+                }
+                ringColorsAttr.needsUpdate = true;
+            });
+            const rgbeLoader = new RGBELoader();
+            rgbeLoader.load(theme.hdr, (texture) => {
+                texture.mapping = THREE.EquirectangularReflectionMapping;
+                if (currentHdrTexture) currentHdrTexture.dispose();
+                scene.background = texture; scene.environment = texture;
+                scene.backgroundIntensity = 1.5;
+                currentHdrTexture = texture;
+            });
+            document.querySelectorAll('.theme-swatch').forEach(sw => {
+                sw.classList.toggle('active', sw.dataset.theme === themeName);
+            });
+
+            if (theme.shadowColor && theme.highlightColor) {
+                document.documentElement.style.setProperty('--item-shadow-color', theme.shadowColor);
+                document.documentElement.style.setProperty('--item-highlight-color', theme.highlightColor);
+            }
+        }
+
+        function easeInOutCubic(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+        function triggerExplosion() {
+            if (isExplosionActive) return; isExplosionActive = true; explosionStartTime = clock.getElapsedTime();
+            document.getElementById('explode-btn').classList.add('active');
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+            const time = elapsedTime;
+            updateIntroSequence(time);
+            if (time > waveTimeStart + WAVE_INTERVAL) waveTimeStart = time;
+            coreHeart.material.uniforms.uWaveTimeStart.value = waveTimeStart;
+            orbitRings.children.forEach(ring => {
+                ring.material.uniforms.uWaveTimeStart.value = waveTimeStart;
+            });
+
+            if (isFocused && focusedItem) {
+                const targetPos = new THREE.Vector3();
+                focusedItem.proxy.getWorldPosition(targetPos);
+                controls.target.lerp(targetPos, 0.05);
+            } else {
+                if (introCompleted) {
+                    idleDriftVector.set(
+                        Math.sin(time * 0.07) * 0.6,
+                        Math.cos(time * 0.12) * 0.3,
+                        Math.sin(time * 0.05) * 0.5
+                    );
+                    tempTargetVector.copy(RETURN_TARGET).addScaledVector(idleDriftVector, 0.2);
+                    controls.target.lerp(tempTargetVector, 0.02);
+                } else {
+                    controls.target.lerp(RETURN_TARGET, 0.05);
+                }
+                if (!controls.autoRotate) {
+                    if (introCompleted) controls.autoRotate = true;
+                    else if (controls.target.distanceTo(RETURN_TARGET) < 0.5) controls.autoRotate = true;
+                }
+            }
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(coreHeart);
+            if (intersects.length > 0) {
+                coreHeart.scale.lerp(new THREE.Vector3(1.15, 1.15, 1.15), 0.1);
+            } else {
+                const breathe = 1 + Math.sin(time * 2.0) * 0.1;
+                coreHeart.scale.lerp(new THREE.Vector3(breathe, breathe, breathe), 0.1);
+            }
+
+            updateDOMItemsPositions();
+            if (isExplosionActive) {
+                const explosionTime = (elapsedTime - explosionStartTime) * 1000;
+                const progress = Math.min(explosionTime / explosionDuration, 1.0);
+                const pulseProgress = Math.sin(progress * Math.PI); const easedProgress = easeInOutCubic(pulseProgress);
+                orbitRings.children.forEach(ring => { ring.material.uniforms.uExplode.value = easedProgress; });
+                coreHeart.material.uniforms.uExplode.value = easedProgress;
+                if (progress >= 1.0) { isExplosionActive = false; document.getElementById('explode-btn').classList.remove('active'); }
+            }
+            coreHeart.material.uniforms.time.value = time; coreHeart.material.uniforms.uMouse.value.copy(mouse);
+            orbitRings.children.forEach(ring => {
+                ring.material.uniforms.time.value = time; ring.material.uniforms.uMouse.value.copy(mouse);
+            });
+            if (distantStars) { distantStars.rotation.y += 0.00003; distantStars.material.uniforms.time.value = time; }
+            if (nearerStars) { nearerStars.rotation.y += 0.00008; nearerStars.material.uniforms.time.value = time; }
+            if (spaceDust) { spaceDust.rotation.y += 0.00015; spaceDust.material.uniforms.time.value = time; }
+            if (pinkNebulae) { pinkNebulae.rotation.y += 0.00005; pinkNebulae.material.uniforms.time.value = time; }
+            if (blueNebulae) { blueNebulae.rotation.y += 0.00006; blueNebulae.material.uniforms.time.value = time; }
+            if (meteorShower) { meteorShower.material.uniforms.time.value = time; }
+            if (backgroundNebula1) backgroundNebula1.rotation.y += 0.00002;
+            if (backgroundNebula2) backgroundNebula2.rotation.y -= 0.000025;
+            const breath = 0.5 + Math.sin(time * 0.2) * 0.5;
+            scene.fog.color.setHSL(0.65, 0.3, 0.02 + breath * 0.015);
+            if (scene.backgroundIntensity) { scene.backgroundIntensity = 1.2 + breath * 0.6; }
+            if (introCompleted && coreHeart.material.uniforms.uHeartPulse) {
+                coreHeart.material.uniforms.uHeartPulse.value = 0.85 + Math.sin(time * 2.6) * 0.15;
+            }
+            orbitRings.children.forEach((ring, index) => {
+                const speed = 0.0005 * (index + 1);
+                ring.rotation.z += speed; ring.rotation.x += speed * 0.3; ring.rotation.y += speed * 0.2;
+                ring.scale.y = 1.0 + Math.sin(time * 3.0 + index * 0.5) * 0.2;
+            });
+            mainGroup.rotation.y += 0.0005;
+            controls.update();
+            composer.render();
+        }
+        function onWindowResize() {
+            const aspect = window.innerWidth / window.innerHeight;
+            camera.aspect = aspect;
+            camera.fov = aspect < 1 ? 90 : 75;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+            updateCameraAnchors(aspect);
+            if (introCompleted) {
+                camera.position.copy(cameraFinalPosition);
+            } else {
+                camera.position.copy(introCameraStart);
+            }
+            camera.lookAt(introTarget);
+            controls.update();
+
+            scene.updateMatrixWorld(true);
+
+            clearTimeout(resizeDebounceTimeout);
+
+            resizeDebounceTimeout = setTimeout(() => {
+                createOrbitingItems();
+            }, 250);
+        }
+        function onMouseMove(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        }
+
+        init();
+        animate();
+    </script>
+            
+        <script>
+            window.dataCosmicHeart = {"title":"M\u00e3i m\u00e3i iu em","home":"https:\/\/love.tsonit.com\/cosmic-heart-theme","data":{"title":"M\u00e3i m\u00e3i iu em","type_music":"system","music_id":"audio\/music.mp3","backgroundMusic":"./audio/music.mp3"}};
+        </script>
+        <script>
+        
+        const musicManager = {
+             
+            audio: null,
+            isUnlocked: false,  
+            isAttemptingPlay: false, 
+            state: 'idle', 
+            tokenData: null,
+            _unlockEvents: ['touchstart', 'click', 'keydown', 'mousemove'],  
+            _unlockHandlerRef: null, 
+            autoUnmuteTimeout: null,
+            _pendingVisibilityHandler: null,
+
+            _startAutoplayBypass() {
+                if (this.isUnlocked || !this.audio) return;  
+                if (this._unlockHandlerRef) {
+                    this._removeAutoplayBypassListeners();
+                }
+                this._unlockHandlerRef = this._unlockHandler.bind(this);
+
+                this._unlockEvents.forEach(eventName => {
+                    document.addEventListener(eventName, this._unlockHandlerRef, {
+                        passive: true
+                    });
+                });
+
+                console.log("Bypass Autoplay: Đang lắng nghe tương tác người dùng để mở khóa âm thanh...");
+            },
+
+            _unlockHandler() {
+                if (this.isUnlocked || this.isAttemptingPlay) return;
+
+                this.isAttemptingPlay = true;
+
+                this.audio.play().then(() => {
+                    if (this.audio) {
+                        this.audio.muted = false;
+                        this.audio.volume = 0.7;
+                    }
+                    console.log("Bypass Autoplay: Âm thanh đã được mở khóa thành công!");
+                    this.isUnlocked = true;
+                    this._removeAutoplayBypassListeners();
+                }).catch(error => {
+                }).finally(() => {
+                    this.isAttemptingPlay = false;
+                });
+            },
+
+            _queueAutoUnmute() {
+                if (!this.audio) return;
+                this._clearAutoUnmuteWorkflow();
+                const attemptUnmute = () => {
+                    this.autoUnmuteTimeout = null;
+                    if (!this.audio || this.audio.paused) return;
+                    this._finalizeAutoPlaybackUnlock();
+                };
+                const schedule = () => {
+                    this.autoUnmuteTimeout = setTimeout(attemptUnmute, 500);
+                };
+                if (document.visibilityState === 'visible') {
+                    schedule();
+                } else {
+                    this._pendingVisibilityHandler = () => {
+                        document.removeEventListener('visibilitychange', this._pendingVisibilityHandler);
+                        this._pendingVisibilityHandler = null;
+                        schedule();
+                    };
+                    document.addEventListener('visibilitychange', this._pendingVisibilityHandler, {
+                        once: true
+                    });
+                }
+            },
+
+            _finalizeAutoPlaybackUnlock() {
+                if (!this.audio) return;
+                this.audio.muted = false;
+                this.audio.volume = 0.7;
+                this.isUnlocked = true;
+                this.updateState('playing');
+                this._removeAutoplayBypassListeners();
+                this._clearAutoUnmuteWorkflow();
+            },
+
+            _clearAutoUnmuteWorkflow() {
+                if (this.autoUnmuteTimeout) {
+                    clearTimeout(this.autoUnmuteTimeout);
+                    this.autoUnmuteTimeout = null;
+                }
+                if (this._pendingVisibilityHandler) {
+                    document.removeEventListener('visibilitychange', this._pendingVisibilityHandler);
+                    this._pendingVisibilityHandler = null;
+                }
+            },
+
+            _removeAutoplayBypassListeners() {
+                if (!this._unlockHandlerRef) return;
+                this._unlockEvents.forEach(eventName => {
+                    document.removeEventListener(eventName, this._unlockHandlerRef);
+                });
+                this._unlockHandlerRef = null;
+            },
+
+
+            _setupAudio(sourceUrl = null) {
+                let audioSrc = sourceUrl || window.dataCosmicHeart?.data?.backgroundMusic;
+                if (!audioSrc) {
+                    audioSrc = './audio/music.mp3';
+                    console.warn("Không tìm thấy cấu hình nhạc, sử dụng nhạc mặc định.");
+                }
+                let audioElement = document.getElementById('bg-music');
+                if (!audioElement) {
+                    audioElement = document.createElement('audio');
+                    audioElement.id = 'bg-music';
+                    audioElement.style.display = 'none';
+                    document.body.appendChild(audioElement);
+                }
+                const isCrossOrigin = /^(https?:)?\/\//.test(audioSrc) && new URL(audioSrc, window.location.href)
+                    .origin !== window.location.origin;
+                if (isCrossOrigin) {
+                    audioElement.crossOrigin = "anonymous";
+                }
+                audioElement.src = audioSrc;
+                audioElement.loop = true;
+                audioElement.preload = 'auto';
+                audioElement.autoplay = true;
+                audioElement.setAttribute('playsinline', '');
+                audioElement.muted = false;
+                audioElement.volume = 0.7;
+                this._clearAutoUnmuteWorkflow();
+                audioElement.load();
+                const playAttempt = audioElement.play();
+                if (playAttempt && typeof playAttempt.then === 'function') {
+                    playAttempt.then(() => {
+                        if (!audioElement.paused) {
+                            this._queueAutoUnmute();
+                        }
+                    }).catch((error) => {
+                        console.warn('Tự động phát bị chặn:', error?.message || error);
+                    });
+                } else if (!audioElement.paused) {
+                    this._queueAutoUnmute();
+                }
+                this.audio = audioElement;
+                this.attachEventListeners();
+                this.updateState('ready');
+            },
+
+            async init() {
+                const musicConfig = window.dataCosmicHeart?.data;
+                this.updateState('loading');
+
+                if (!musicConfig) {
+                    console.warn("Không tìm thấy dataCosmicHeart. Sử dụng nhạc hệ thống dự phòng.");
+                    this._setupAudio();
+                } else if (musicConfig.type_music === 'system' || musicConfig.type_music === 'link') {
+                    this._setupAudio(musicConfig.backgroundMusic);
+                } else if (musicConfig.type_music === 'zing' && musicConfig.music_id) {
+                    try {
+                        const res = await this.fetchWithAuth(`/get-song?id=${musicConfig.music_id}`);
+                        if (!res.ok) throw new Error(`Response not OK: ${res.status}`);
+                        const songInfo = await res.json();
+                        const mp3Url = songInfo.stream?.['128'];
+
+                        if (mp3Url) {
+                            this._setupAudio(mp3Url);
+                        } else {
+                            console.error('Không tìm thấy link MP3 128kbps, dùng nhạc dự phòng.');
+                            this._setupAudio();
+                        }
+                    } catch (error) {
+                        console.error('Lỗi khi lấy nhạc từ Zing:', error);
+                        this.updateState('error');
+                        this._setupAudio();
+                    }
+                } else {
+                    this._setupAudio();
+                }
+
+                this._startAutoplayBypass();
+                this.play().catch((error) => {
+                    if (error?.name !== 'NotAllowedError') {
+                        console.warn('Không thể tự động phát nhạc:', error?.message || error);
+                    }
+                });
+            },
+
+            play() {
+                if (!this.audio || this.state === 'loading') {
+                    return Promise.reject(new Error("Audio chưa sẵn sàng."));
+                }
+                if (!this.audio.paused) {
+                    this.audio.muted = false;
+                    return Promise.resolve();
+                }
+                this.audio.muted = false;
+                const playPromise = this.audio.play();
+                playPromise.then(() => {
+                    this.isUnlocked = true;
+                    this.updateState('playing');
+                }).catch(error => {
+                    if (error.name === 'NotAllowedError') {
+                        this.updateState('paused');
+                    } else {
+                        this.updateState('error');
+                    }
+                });
+                return playPromise;
+            },
+
+            
+            togglePlayback() {
+                if (!this.audio || this.state === 'loading') {
+                    console.warn("Nhạc chưa sẵn sàng.");
+                    return;
+                }
+
+                if (!this.isUnlocked) {
+                    this.isUnlocked = true;
+                    this._removeAutoplayBypassListeners();
+                }
+
+                if (this.audio.paused) {
+                    this.audio.muted = false;
+                    this.play();
+                } else {
+                    this.audio.pause();
+                }
+            },
+
+            updateState(newState) {
+                this.state = newState;
+                this.updateUI();
+            },
+
+            updateUI() {
+                const audioIcon = document.getElementById('audio-icon');
+                if (!audioIcon) return;
+                if (!this.audio || this.audio.paused) {
+                    audioIcon.classList.remove("fa-volume-high");
+                    audioIcon.classList.add("fa-volume-xmark");
+                } else {
+                    audioIcon.classList.remove("fa-volume-xmark");
+                    audioIcon.classList.add("fa-volume-high");
+                }
+            },
+
+            attachEventListeners() {
+                if (!this.audio) return;
+                this.audio.onplay = () => this.updateState('playing');
+                this.audio.onpause = () => this.updateState('paused');
+                this.audio.onvolumechange = () => this.updateUI();
+            },
+
+            async getToken() {
+                try {
+                    const res = await fetch('/token-api-mp3');
+                    if (!res.ok) throw new Error('Không lấy được token');
+                    this.tokenData = await res.json();
+                    return this.tokenData;
+                } catch (err) {
+                    console.error('Lỗi lấy token:', err);
+                    return null;
+                }
+            },
+
+            async fetchWithAuth(url) {
+                if (!this.tokenData) {
+                    await this.getToken();
+                }
+                if (!this.tokenData) throw new Error('Không có token xác thực');
+
+                const headers = {
+                    'X-Auth-Token': this.tokenData.token,
+                    'X-Auth-Timestamp': this.tokenData.timestamp,
+                    'X-Client-Key': this.tokenData.clientKey,
+                    'X-Auth-Nonce': this.tokenData.nonce,
+                };
+
+                let res = await fetch(url, {
+                    headers
+                });
+
+                if (res.status === 401 || res.status === 403) {  
+                    console.log("Token có thể đã hết hạn, làm mới token...");
+                    await this.getToken();
+                    if (!this.tokenData) throw new Error('Không lấy được token mới');
+
+                    const newHeaders = {
+                        'X-Auth-Token': this.tokenData.token,
+                        'X-Auth-Timestamp': this.tokenData.timestamp,
+                        'X-Client-Key': this.tokenData.clientKey,
+                        'X-Auth-Nonce': this.tokenData.nonce,
+                    };
+                    res = await fetch(url, {
+                        headers: newHeaders
+                    });
+                }
+
+                if (!res.ok) {
+                    const errorText = await res.text();
+                    throw new Error(`Request lỗi sau khi thử lại: ${res.status} - ${errorText}`);
+                }
+                return res;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.musicManager = musicManager;
+            musicManager.init();
+
+            const toggleBtn = document.getElementById("toggle-audio");
+            if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => musicManager.togglePlayback());
+            }
+            const fullscreenManager = {
+                toggleBtn: document.getElementById('toggle-fullscreen'),
+                iconElement: document.getElementById('fullscreen-icon'),
+                isFullscreen: function() {
+                    return !!(document.fullscreenElement || document.webkitFullscreenElement || document
+                        .mozFullScreenElement || document.msFullscreenElement);
+                },
+                updateIcon: function() {
+                    if (!this.iconElement) return;
+
+                    if (this.isFullscreen()) {
+                        this.iconElement.classList.remove('fa-expand');
+                        this.iconElement.classList.add('fa-compress');
+                    } else {
+                        this.iconElement.classList.remove('fa-compress');
+                        this.iconElement.classList.add('fa-expand');
+                    }
+                },
+                toggle: function() {
+                    if (!this.isFullscreen()) {
+                        const element = document.documentElement;
+                        if (element.requestFullscreen) {
+                            element.requestFullscreen();
+                        } else if (element.mozRequestFullScreen) {  
+                            element.mozRequestFullScreen();
+                        } else if (element.webkitRequestFullscreen) { 
+                            element.webkitRequestFullscreen();
+                        } else if (element.msRequestFullscreen) {  
+                            element.msRequestFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                            document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+                    }
+                },
+                init: function() {
+                    if (this.toggleBtn) {
+                        this.toggleBtn.addEventListener('click', () => this.toggle());
+                        document.addEventListener('fullscreenchange', () => this.updateIcon());
+                        document.addEventListener('webkitfullscreenchange', () => this.updateIcon());
+                        document.addEventListener('mozfullscreenchange', () => this.updateIcon());
+                        document.addEventListener('MSFullscreenChange', () => this.updateIcon());
+                    }
+                }
+            };
+            fullscreenManager.init();
+        });
+    </script>
+            <script>
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault();
+            });
+
+            document.addEventListener("keydown", function(e) {
+                if (
+                    e.key === "F12" ||
+                    (e.ctrlKey && e.shiftKey && ["i", "j", "c", "s"].includes(e.key.toLowerCase())) ||
+                    (e.ctrlKey && e.key.toLowerCase() === "u") ||
+                    (e.metaKey && e.altKey && e.key.toLowerCase() === "i") ||  
+                    (e.metaKey && e.key.toLowerCase() === "u")  
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            console.log = () => {};
+            console.debug = () => {};
+            console.warn = () => {};
+            console.info = () => {};
+
+            setInterval(() => {
+                const before = new Date().getTime();
+                debugger;
+                const after = new Date().getTime();
+                if (after - before > 100) {
+                    document.body.innerHTML =
+                        '<h1 style="text-align:center;margin-top:100px;color:red">🔒 Bạn đang cố mở Developer Tools!</h1>';
+                }
+            }, 1000);
+
+            (function() {
+                const element = new Image();
+                Object.defineProperty(element, 'id', {
+                    get: function() {
+                        document.body.innerHTML =
+                            '<h1 style="text-align:center;margin-top:100px;color:red">⚠️ Đừng mở console!</h1>';
+                        throw new Error("Console is blocked");
+                    }
+                });
+
+                setInterval(() => {
+                    console.log(element);
+                    console.clear();
+                }, 2000);
+            })();
+
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a') {
+                    e.preventDefault();
+                }
+            });
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"dbcd8856a1a842ceb5c3d63534a9f51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
